@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <!-- rixcheck hex sticker: a single green checkmark on Nix blue. -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#16233f"/>
+      <stop offset="0.55" stop-color="#2b4a86"/>
+      <stop offset="1" stop-color="#5277C3"/>
+    </linearGradient>
+  </defs>
+
+  <!-- hexagon, points up/down (standard R hex orientation) -->
+  <path d="M100 3 L184 51.5 L184 148.5 L100 197 L16 148.5 L16 51.5 Z"
+        fill="url(#bg)" stroke="#7EBAE4" stroke-width="6" stroke-linejoin="round"/>
+
+  <!-- the checkmark -->
+  <path d="M58 92 L90 124 L146 56" fill="none" stroke="#7ce38b"
+        stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- package name -->
+  <text x="100" y="168" text-anchor="middle" fill="#ffffff"
+        font-family="Helvetica, Arial, sans-serif" font-size="26"
+        font-weight="bold" letter-spacing="1">rixcheck</text>
+</svg>

@@ -1,4 +1,4 @@
-# rixcheck
+# rixcheck <img src="man/figures/logo.svg" align="right" height="139" alt="rixcheck hex sticker"/>
 
 Continuous reproducibility checks for Nix-pinned R projects.
 
