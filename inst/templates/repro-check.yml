@@ -1,0 +1,19 @@
+name: reproducibility check
+
+on:
+  push:
+  workflow_dispatch:
+{{SCHEDULE}}
+
+jobs:
+  repro-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: DeterminateSystems/nix-installer-action@main
+      - uses: cachix/cachix-action@v15
+        with:
+          name: rstats-on-nix
+      - run: nix-build
+{{RUN_STEPS}}
+{{COMPARE_STEP}}
