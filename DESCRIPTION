@@ -12,6 +12,8 @@ Description: Scaffolds GitHub Actions workflows and Dockerfiles for projects
     still reproduced, upgrading the claim "this project is executable" to
     "this project still produces its published numbers from its recipe".
 License: MIT + file LICENSE
+URL: https://github.com/felipelfv/rixcheck
+BugReports: https://github.com/felipelfv/rixcheck/issues
 Encoding: UTF-8
 Suggests:
     testthat (>= 3.0.0),

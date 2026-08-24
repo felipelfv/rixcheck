@@ -64,3 +64,10 @@ decayed before a reader does.
   from the CI's in low-order bits (and, for iterative approximate
   algorithms, beyond them); commit outputs produced by the Linux
   environment where exactness matters.
+
+---
+
+The hex sticker incorporates the Nix snowflake from
+[nixos-artwork](https://github.com/NixOS/nixos-artwork), © the NixOS
+project, used under
+[CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/).
