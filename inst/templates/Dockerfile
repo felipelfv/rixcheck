@@ -1,6 +1,7 @@
 FROM ubuntu:24.04
 
-RUN apt update -y && apt install -y curl
+# git is needed so tools/repro-compare.R can read committed baselines
+RUN apt update -y && apt install -y curl git
 
 # Install the Nix package manager (Determinate Systems installer)
 RUN curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install linux \
