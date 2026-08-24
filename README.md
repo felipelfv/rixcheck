@@ -1,5 +1,9 @@
 # rixcheck <img src="man/figures/logo.svg" align="right" height="139" alt="rixcheck hex sticker"/>
 
+<!-- badges: start -->
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+<!-- badges: end -->
+
 Continuous reproducibility checks for Nix-pinned R projects.
 
 A project whose computational environment is described by a `default.nix`
