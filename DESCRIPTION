@@ -2,7 +2,7 @@ Package: rixcheck
 Title: Continuous Reproducibility Checks for Nix-Based R Projects
 Version: 0.0.0.9000
 Authors@R:
-    person("Felipe", "Vieira", email = "felipelfv98@gmail.com",
+    person("Felipe", "Fontana Vieira", email = "felipelfv98@gmail.com",
            role = c("aut", "cre", "cph"))
 Description: Scaffolds GitHub Actions workflows and Dockerfiles for projects
     whose computational environment is pinned with a Nix expression (for
