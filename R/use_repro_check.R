@@ -42,9 +42,11 @@ use_repro_check <- function(run,
          call. = FALSE)
   }
 
+  # type = "sh": the commands run in the Linux CI shell, so quoting must not
+  # depend on the platform where the workflow is generated
   run_steps <- paste0(
     "      - run: nix-shell default.nix --run ",
-    shQuote(run), collapse = "\n")
+    shQuote(run, type = "sh"), collapse = "\n")
 
   schedule_block <- if (is.null(schedule)) "" else
     paste0("  schedule:\n    - cron: '", schedule, "'")
@@ -57,7 +59,8 @@ use_repro_check <- function(run,
     compare_step <- paste0(
       "      - run: nix-shell default.nix --run ",
       shQuote(paste0("Rscript tools/repro-compare.R ",
-                     paste(outputs, collapse = " "), tol_arg)))
+                     paste(outputs, collapse = " "), tol_arg),
+              type = "sh"))
   }
 
   template <- readLines(
