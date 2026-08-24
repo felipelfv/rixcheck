@@ -1,23 +1,59 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
-  <!-- rixcheck hex sticker: a single green checkmark on Nix blue. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="200" height="200" viewBox="0 0 200 200">
+  <!-- rixcheck hex sticker: the official Nix snowflake (nixos-artwork
+       nix-snowflake-colours.svg, CC-BY) on a light beige/orange hex,
+       with a muted green checkmark centred on the snowflake. -->
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#16233f"/>
-      <stop offset="0.55" stop-color="#2b4a86"/>
-      <stop offset="1" stop-color="#5277C3"/>
+      <stop offset="0" stop-color="#fdf6ea"/>
+      <stop offset="1" stop-color="#f6d9ae"/>
+    </linearGradient>
+    <!-- gradients from the official Nix logo (userSpaceOnUse, so they must
+         stay in the snowflake's original coordinate space) -->
+    <linearGradient id="nixLight" gradientUnits="userSpaceOnUse"
+                    gradientTransform="translate(70.650339,-1055.1511)"
+                    x1="200.59668" y1="351.41116" x2="290.08701" y2="506.18814">
+      <stop offset="0" stop-color="#699ad7"/>
+      <stop offset="0.24345198" stop-color="#7eb1dd"/>
+      <stop offset="1" stop-color="#7ebae4"/>
+    </linearGradient>
+    <linearGradient id="nixDark" gradientUnits="userSpaceOnUse"
+                    gradientTransform="translate(864.69589,-1491.3405)"
+                    x1="-584.19934" y1="782.33563" x2="-496.29703" y2="937.71399">
+      <stop offset="0" stop-color="#415e9a"/>
+      <stop offset="0.23168644" stop-color="#4a6baf"/>
+      <stop offset="1" stop-color="#5277c3"/>
     </linearGradient>
   </defs>
 
   <!-- hexagon, points up/down (standard R hex orientation) -->
   <path d="M100 3 L184 51.5 L184 148.5 L100 197 L16 148.5 L16 51.5 Z"
-        fill="url(#bg)" stroke="#7EBAE4" stroke-width="6" stroke-linejoin="round"/>
+        fill="url(#bg)" stroke="#e2a25c" stroke-width="6" stroke-linejoin="round"/>
 
-  <!-- the checkmark -->
-  <path d="M58 92 L90 124 L146 56" fill="none" stroke="#7ce38b"
-        stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Nix snowflake, centred at (100, 90) -->
+  <g transform="translate(100,90) scale(0.23) translate(-250.78,-250.78) translate(-156.41121,933.30685)">
+    <g transform="matrix(0.99994059,0,0,0.99994059,-0.06321798,33.188377)">
+      <path id="nixArmLight" fill="url(#nixLight)" fill-rule="evenodd"
+            d="m 309.54892,-710.38827 122.19683,211.67512 -56.15706,0.5268 -32.6236,-56.8692 -32.85645,56.5653 -27.90237,-0.011 -14.29086,-24.6896 46.81047,-80.4901 -33.22946,-57.8257 z"/>
+      <use xlink:href="#nixArmLight" transform="rotate(60,407.11155,-715.78724)"/>
+      <use xlink:href="#nixArmLight" transform="rotate(-60,407.31177,-715.70016)"/>
+      <use xlink:href="#nixArmLight" transform="rotate(180,407.41868,-715.7565)"/>
+      <path id="nixArmDark" fill="url(#nixDark)" fill-rule="evenodd"
+            d="m 309.54892,-710.38827 122.19683,211.67512 -56.15706,0.5268 -32.6236,-56.8692 -32.85645,56.5653 -27.90237,-0.011 -14.29086,-24.6896 46.81047,-80.4901 -33.22946,-57.8256 z"/>
+      <use xlink:href="#nixArmDark" transform="rotate(120,407.33916,-716.08356)"/>
+      <use xlink:href="#nixArmDark" transform="rotate(-120,407.28823,-715.86995)"/>
+    </g>
+  </g>
+
+  <!-- checkmark, centred on the snowflake: beige halo for contrast,
+       then a muted green stroke -->
+  <path d="M77 91 L94 108 L123 71" fill="none" stroke="#f8ecd9"
+        stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M77 91 L94 108 L123 71" fill="none" stroke="#4c9a52"
+        stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
 
   <!-- package name -->
-  <text x="100" y="168" text-anchor="middle" fill="#ffffff"
-        font-family="Helvetica, Arial, sans-serif" font-size="26"
-        font-weight="bold" letter-spacing="1">rixcheck</text>
+  <text x="100" y="166" text-anchor="middle" fill="#415e9a"
+        font-family="Helvetica, Arial, sans-serif" font-size="20"
+        font-weight="bold" letter-spacing="0.5">rixcheck</text>
 </svg>
