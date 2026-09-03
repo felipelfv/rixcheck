@@ -67,9 +67,9 @@ use_repro_check <- function(run,
     system.file("templates", "repro-check.yml", package = "rixcheck"),
     warn = FALSE)
   yml <- paste(template, collapse = "\n")
-  yml <- sub("{{SCHEDULE}}", schedule_block, yml, fixed = TRUE)
-  yml <- sub("{{RUN_STEPS}}", run_steps, yml, fixed = TRUE)
-  yml <- sub("{{COMPARE_STEP}}", compare_step, yml, fixed = TRUE)
+  yml <- sub("{{SCHEDULE}}", schedule_block, yml)
+  yml <- sub("{{RUN_STEPS}}", run_steps, yml)
+  yml <- sub("{{COMPARE_STEP}}", compare_step, yml)
   yml <- gsub("\n{3,}", "\n\n", yml)
 
   dir.create(".github/workflows", recursive = TRUE, showWarnings = FALSE)
